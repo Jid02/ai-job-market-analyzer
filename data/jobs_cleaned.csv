@@ -1,0 +1,101 @@
+job_id,job_title,company,location,job_type,salary,experience_required,posted_date,application_deadline,job_portal,number_of_applicants,education_requirement,job_description,remote/onsite,company_size,city,experience_min,experience_max,experience_years
+JOB1,software engineer,amazon,ahmedabad,Full-time,5,2-5 years,2025-01-16,2025-01-25,LinkedIn,23,PhD,c++ sql python,Remote,Small (1-50),ahmedabad,2.0,5.0,3.5
+JOB2,marketing executive,infosys,ahmedabad,Internship,5,2-5 years,2024-12-25,2025-01-19,Indeed,462,MBA,sql c++ python,Remote,Large (500+),ahmedabad,2.0,5.0,3.5
+JOB3,financial analyst,deloitte,jaipur,Contract,20,5-10 years,2025-01-22,2025-01-29,Naukri.com,430,M.Tech,machine learning excel react,Remote,Large (500+),jaipur,5.0,10.0,7.5
+JOB4,business analyst,amazon,delhi,Full-time,20,2-5 years,2025-01-07,2025-02-06,LinkedIn,387,B.Tech,machine learning python sql,Hybrid,Small (1-50),delhi,2.0,5.0,3.5
+JOB5,software engineer,infosys,delhi,Full-time,12,10+ years,2024-12-26,2025-01-08,Indeed,199,MBA,uiux c++ java,Onsite,Small (1-50),delhi,10.0,10.0,10.0
+JOB6,data scientist,wipro,pune,Internship,5,5-10 years,2024-12-27,2025-01-09,Indeed,281,B.Sc,sql react c++,Remote,Large (500+),pune,5.0,10.0,7.5
+JOB7,software engineer,accenture,noida,Full-time,5,5-10 years,2024-12-30,2025-01-13,LinkedIn,489,B.Tech,sql python c++,Hybrid,Large (500+),noida,5.0,10.0,7.5
+JOB9,marketing executive,hcl,ahmedabad,Part-time,5,5-10 years,2025-01-21,2025-02-16,Naukri.com,323,B.Tech,java python excel,Onsite,Medium (51-500),ahmedabad,5.0,10.0,7.5
+JOB10,financial analyst,microsoft,pune,Internship,12,5-10 years,2025-01-06,2025-01-22,Indeed,469,B.Tech,sql react c++,Remote,Large (500+),pune,5.0,10.0,7.5
+JOB11,sales representative,amazon,mumbai,Part-time,5,5-10 years,2024-12-30,2025-01-25,LinkedIn,30,MBA,uiux c++ react,Onsite,Small (1-50),mumbai,5.0,10.0,7.5
+JOB12,financial analyst,hcl,hyderabad,Contract,5,5-10 years,2025-01-20,2025-02-03,Naukri.com,260,B.Tech,uiux excel digital marketing,Hybrid,Large (500+),hyderabad,5.0,10.0,7.5
+JOB13,product manager,google,noida,Part-time,20,2-5 years,2025-01-01,2025-01-16,Indeed,487,B.Tech,react machine learning sql,Hybrid,Small (1-50),noida,2.0,5.0,3.5
+JOB15,financial analyst,wipro,delhi,Contract,5,2-5 years,2024-12-23,2025-01-12,Naukri.com,14,B.Sc,c++ java python,Hybrid,Large (500+),delhi,2.0,5.0,3.5
+JOB16,sales representative,deloitte,delhi,Contract,20,2-5 years,2025-01-17,2025-01-27,Naukri.com,422,PhD,java excel machine learning,Hybrid,Small (1-50),delhi,2.0,5.0,3.5
+JOB17,hr manager,wipro,kolkata,Part-time,12,5-10 years,2025-01-16,2025-02-05,Naukri.com,360,B.Tech,java uiux machine learning,Onsite,Small (1-50),kolkata,5.0,10.0,7.5
+JOB18,cyber security analyst,infosys,pune,Contract,20,10+ years,2025-01-14,2025-01-29,LinkedIn,271,B.Sc,excel digital marketing python,Remote,Small (1-50),pune,10.0,10.0,10.0
+JOB19,cyber security analyst,ibm,bangalore,Part-time,12,10+ years,2024-12-23,2024-12-30,LinkedIn,113,B.Tech,digital marketing machine learning sql,Hybrid,Medium (51-500),bangalore,10.0,10.0,10.0
+JOB20,cyber security analyst,hcl,pune,Part-time,20,0-2 years,2025-01-22,2025-02-03,Naukri.com,350,M.Tech,java aws react,Remote,Large (500+),pune,0.0,2.0,1.0
+JOB21,data scientist,deloitte,hyderabad,Part-time,12,2-5 years,2024-12-25,2025-01-22,LinkedIn,232,M.Tech,sql machine learning python,Hybrid,Medium (51-500),hyderabad,2.0,5.0,3.5
+JOB22,graphic designer,hcl,kolkata,Part-time,20,2-5 years,2025-01-20,2025-02-03,Naukri.com,180,PhD,excel uiux react,Remote,Small (1-50),kolkata,2.0,5.0,3.5
+JOB23,product manager,tcs,pune,Contract,20,2-5 years,2025-01-08,2025-02-03,Naukri.com,76,B.Sc,python uiux digital marketing,Remote,Medium (51-500),pune,2.0,5.0,3.5
+JOB25,software engineer,microsoft,pune,Internship,5,5-10 years,2024-12-28,2025-01-27,Indeed,24,B.Sc,aws java react,Onsite,Large (500+),pune,5.0,10.0,7.5
+JOB26,cyber security analyst,microsoft,delhi,Full-time,12,0-2 years,2025-01-09,2025-02-07,LinkedIn,133,B.Tech,uiux java c++,Remote,Medium (51-500),delhi,0.0,2.0,1.0
+JOB27,product manager,amazon,ahmedabad,Part-time,12,10+ years,2025-01-16,2025-01-25,Indeed,424,PhD,excel uiux react,Onsite,Medium (51-500),ahmedabad,10.0,10.0,10.0
+JOB28,data scientist,google,jaipur,Full-time,5,5-10 years,2025-01-15,2025-01-27,Indeed,288,B.Tech,java aws c++,Onsite,Medium (51-500),jaipur,5.0,10.0,7.5
+JOB29,financial analyst,infosys,pune,Contract,12,5-10 years,2025-01-01,2025-01-09,Indeed,221,B.Tech,sql digital marketing machine learning,Onsite,Small (1-50),pune,5.0,10.0,7.5
+JOB31,hr manager,amazon,delhi,Contract,8,5-10 years,2024-12-23,2025-01-07,Indeed,449,MBA,react c++ machine learning,Onsite,Small (1-50),delhi,5.0,10.0,7.5
+JOB34,graphic designer,tcs,chennai,Part-time,5,10+ years,2025-01-07,2025-01-16,Naukri.com,406,M.Tech,react java excel,Hybrid,Large (500+),chennai,10.0,10.0,10.0
+JOB35,financial analyst,amazon,hyderabad,Internship,20,0-2 years,2024-12-29,2025-01-07,LinkedIn,114,B.Sc,digital marketing python sql,Remote,Small (1-50),hyderabad,0.0,2.0,1.0
+JOB37,cyber security analyst,amazon,noida,Contract,8,5-10 years,2024-12-31,2025-01-22,Indeed,214,B.Tech,react java excel,Onsite,Large (500+),noida,5.0,10.0,7.5
+JOB38,product manager,deloitte,delhi,Part-time,3,10+ years,2025-01-05,2025-01-21,Indeed,300,B.Sc,sql excel aws,Hybrid,Medium (51-500),delhi,10.0,10.0,10.0
+JOB40,financial analyst,google,noida,Part-time,20,2-5 years,2024-12-24,2025-01-19,LinkedIn,278,B.Tech,excel machine learning uiux,Hybrid,Small (1-50),noida,2.0,5.0,3.5
+JOB41,graphic designer,wipro,hyderabad,Full-time,12,0-2 years,2025-01-18,2025-02-17,Naukri.com,391,B.Sc,java sql digital marketing,Hybrid,Large (500+),hyderabad,0.0,2.0,1.0
+JOB42,graphic designer,deloitte,jaipur,Part-time,12,10+ years,2024-12-29,2025-01-11,Naukri.com,487,B.Sc,machine learning digital marketing sql,Hybrid,Medium (51-500),jaipur,10.0,10.0,10.0
+JOB43,software engineer,ibm,mumbai,Internship,20,0-2 years,2024-12-23,2025-01-08,LinkedIn,129,B.Sc,java uiux react,Hybrid,Medium (51-500),mumbai,0.0,2.0,1.0
+JOB44,financial analyst,tcs,ahmedabad,Internship,3,10+ years,2024-12-31,2025-01-08,Naukri.com,429,B.Tech,python aws uiux,Onsite,Large (500+),ahmedabad,10.0,10.0,10.0
+JOB46,product manager,ibm,ahmedabad,Internship,8,2-5 years,2024-12-30,2025-01-20,Indeed,158,B.Tech,python react uiux,Onsite,Small (1-50),ahmedabad,2.0,5.0,3.5
+JOB49,business analyst,accenture,kolkata,Contract,12,10+ years,2025-01-20,2025-02-16,Naukri.com,272,MBA,digital marketing c++ react,Remote,Small (1-50),kolkata,10.0,10.0,10.0
+JOB51,cyber security analyst,google,delhi,Internship,20,5-10 years,2025-01-03,2025-01-14,LinkedIn,190,B.Sc,java excel machine learning,Hybrid,Large (500+),delhi,5.0,10.0,7.5
+JOB52,hr manager,ibm,pune,Full-time,3,0-2 years,2024-12-26,2025-01-03,Naukri.com,500,B.Sc,react excel aws,Hybrid,Small (1-50),pune,0.0,2.0,1.0
+JOB55,data scientist,tcs,mumbai,Contract,5,5-10 years,2024-12-28,2025-01-16,Indeed,268,PhD,c++ machine learning excel,Remote,Small (1-50),mumbai,5.0,10.0,7.5
+JOB57,cyber security analyst,wipro,kolkata,Part-time,20,10+ years,2024-12-30,2025-01-08,Indeed,222,B.Sc,react java python,Hybrid,Small (1-50),kolkata,10.0,10.0,10.0
+JOB58,hr manager,hcl,bangalore,Part-time,12,0-2 years,2025-01-18,2025-02-08,Indeed,472,PhD,c++ excel machine learning,Hybrid,Medium (51-500),bangalore,0.0,2.0,1.0
+JOB60,sales representative,infosys,noida,Full-time,20,2-5 years,2024-12-24,2025-01-12,Indeed,474,B.Tech,machine learning c++ sql,Onsite,Medium (51-500),noida,2.0,5.0,3.5
+JOB62,cyber security analyst,deloitte,bangalore,Full-time,5,0-2 years,2025-01-01,2025-01-31,Naukri.com,47,M.Tech,uiux digital marketing c++,Hybrid,Small (1-50),bangalore,0.0,2.0,1.0
+JOB64,sales representative,ibm,jaipur,Full-time,3,10+ years,2025-01-14,2025-01-22,Naukri.com,350,B.Sc,uiux excel python,Hybrid,Large (500+),jaipur,10.0,10.0,10.0
+JOB66,data scientist,infosys,bangalore,Internship,8,2-5 years,2025-01-12,2025-02-06,Indeed,228,PhD,java uiux python,Onsite,Large (500+),bangalore,2.0,5.0,3.5
+JOB68,hr manager,accenture,ahmedabad,Contract,8,2-5 years,2024-12-31,2025-01-17,Indeed,381,B.Sc,sql java react,Remote,Medium (51-500),ahmedabad,2.0,5.0,3.5
+JOB69,cyber security analyst,accenture,bangalore,Contract,20,10+ years,2025-01-09,2025-02-06,LinkedIn,148,M.Tech,c++ aws python,Onsite,Large (500+),bangalore,10.0,10.0,10.0
+JOB71,graphic designer,amazon,mumbai,Part-time,8,5-10 years,2025-01-15,2025-01-26,LinkedIn,430,PhD,c++ python sql,Remote,Large (500+),mumbai,5.0,10.0,7.5
+JOB73,sales representative,accenture,mumbai,Contract,3,2-5 years,2025-01-20,2025-02-07,Naukri.com,176,MBA,python react java,Onsite,Medium (51-500),mumbai,2.0,5.0,3.5
+JOB74,product manager,microsoft,ahmedabad,Contract,8,2-5 years,2025-01-22,2025-02-12,LinkedIn,173,B.Sc,java python c++,Remote,Small (1-50),ahmedabad,2.0,5.0,3.5
+JOB82,sales representative,wipro,delhi,Part-time,12,10+ years,2025-01-19,2025-02-09,Naukri.com,263,MBA,digital marketing machine learning uiux,Hybrid,Large (500+),delhi,10.0,10.0,10.0
+JOB83,product manager,accenture,noida,Contract,12,0-2 years,2025-01-05,2025-02-02,Indeed,163,MBA,uiux c++ aws,Remote,Small (1-50),noida,0.0,2.0,1.0
+JOB86,product manager,wipro,hyderabad,Full-time,3,5-10 years,2025-01-11,2025-02-09,Naukri.com,24,PhD,aws python react,Remote,Small (1-50),hyderabad,5.0,10.0,7.5
+JOB89,sales representative,tcs,mumbai,Contract,12,5-10 years,2025-01-19,2025-01-29,Naukri.com,120,B.Tech,c++ aws machine learning,Onsite,Large (500+),mumbai,5.0,10.0,7.5
+JOB92,graphic designer,infosys,jaipur,Part-time,8,5-10 years,2025-01-08,2025-02-06,Naukri.com,116,MBA,c++ aws java,Remote,Medium (51-500),jaipur,5.0,10.0,7.5
+JOB93,marketing executive,google,noida,Internship,5,10+ years,2025-01-02,2025-01-31,Naukri.com,78,B.Tech,digital marketing java uiux,Hybrid,Medium (51-500),noida,10.0,10.0,10.0
+JOB94,software engineer,hcl,hyderabad,Full-time,12,2-5 years,2025-01-12,2025-02-10,LinkedIn,496,MBA,sql excel c++,Hybrid,Small (1-50),hyderabad,2.0,5.0,3.5
+JOB95,hr manager,deloitte,mumbai,Full-time,5,0-2 years,2025-01-18,2025-02-03,LinkedIn,80,M.Tech,excel machine learning c++,Onsite,Large (500+),mumbai,0.0,2.0,1.0
+JOB97,software engineer,tcs,jaipur,Internship,3,10+ years,2024-12-27,2025-01-03,Naukri.com,405,MBA,digital marketing c++ machine learning,Hybrid,Small (1-50),jaipur,10.0,10.0,10.0
+JOB98,marketing executive,tcs,kolkata,Full-time,20,2-5 years,2024-12-25,2025-01-14,Naukri.com,428,MBA,machine learning react python,Hybrid,Medium (51-500),kolkata,2.0,5.0,3.5
+JOB102,product manager,hcl,jaipur,Full-time,12,0-2 years,2025-01-02,2025-01-25,Naukri.com,137,M.Tech,machine learning python c++,Remote,Medium (51-500),jaipur,0.0,2.0,1.0
+JOB115,business analyst,google,hyderabad,Internship,3,2-5 years,2024-12-31,2025-01-20,Naukri.com,194,B.Sc,python machine learning java,Hybrid,Small (1-50),hyderabad,2.0,5.0,3.5
+JOB120,cyber security analyst,tcs,kolkata,Full-time,20,5-10 years,2025-01-02,2025-01-25,Indeed,464,B.Sc,uiux python excel,Remote,Medium (51-500),kolkata,5.0,10.0,7.5
+JOB123,data scientist,accenture,noida,Contract,8,0-2 years,2024-12-31,2025-01-08,Naukri.com,41,M.Tech,python aws machine learning,Hybrid,Large (500+),noida,0.0,2.0,1.0
+JOB125,marketing executive,deloitte,jaipur,Contract,8,10+ years,2024-12-27,2025-01-04,Indeed,42,M.Tech,python uiux machine learning,Onsite,Medium (51-500),jaipur,10.0,10.0,10.0
+JOB126,business analyst,wipro,chennai,Part-time,3,0-2 years,2025-01-13,2025-02-10,LinkedIn,476,B.Tech,digital marketing aws c++,Remote,Large (500+),chennai,0.0,2.0,1.0
+JOB127,data scientist,ibm,ahmedabad,Full-time,3,2-5 years,2025-01-09,2025-02-02,LinkedIn,441,B.Sc,c++ python sql,Remote,Medium (51-500),ahmedabad,2.0,5.0,3.5
+JOB128,data scientist,hcl,pune,Part-time,3,0-2 years,2025-01-15,2025-02-14,Naukri.com,318,M.Tech,uiux react excel,Remote,Small (1-50),pune,0.0,2.0,1.0
+JOB129,data scientist,amazon,hyderabad,Contract,3,2-5 years,2025-01-16,2025-01-26,Naukri.com,459,B.Tech,digital marketing react excel,Remote,Large (500+),hyderabad,2.0,5.0,3.5
+JOB131,marketing executive,amazon,noida,Part-time,8,5-10 years,2025-01-02,2025-01-10,LinkedIn,133,PhD,aws react c++,Onsite,Large (500+),noida,5.0,10.0,7.5
+JOB132,business analyst,infosys,pune,Internship,12,0-2 years,2024-12-29,2025-01-22,LinkedIn,202,PhD,aws digital marketing python,Hybrid,Medium (51-500),pune,0.0,2.0,1.0
+JOB140,marketing executive,accenture,ahmedabad,Full-time,8,2-5 years,2025-01-12,2025-01-26,Naukri.com,410,MBA,machine learning excel java,Remote,Large (500+),ahmedabad,2.0,5.0,3.5
+JOB141,graphic designer,ibm,pune,Contract,8,0-2 years,2025-01-17,2025-01-31,Indeed,163,MBA,java excel machine learning,Hybrid,Small (1-50),pune,0.0,2.0,1.0
+JOB145,business analyst,tcs,hyderabad,Full-time,5,5-10 years,2024-12-29,2025-01-12,Naukri.com,431,B.Tech,uiux react python,Remote,Large (500+),hyderabad,5.0,10.0,7.5
+JOB147,software engineer,google,delhi,Part-time,3,5-10 years,2024-12-23,2025-01-19,LinkedIn,265,B.Sc,java excel aws,Remote,Large (500+),delhi,5.0,10.0,7.5
+JOB153,product manager,infosys,ahmedabad,Full-time,3,10+ years,2025-01-06,2025-01-15,LinkedIn,430,B.Tech,machine learning python excel,Remote,Small (1-50),ahmedabad,10.0,10.0,10.0
+JOB156,business analyst,deloitte,chennai,Internship,12,2-5 years,2025-01-08,2025-01-25,Naukri.com,79,B.Tech,python digital marketing c++,Hybrid,Medium (51-500),chennai,2.0,5.0,3.5
+JOB158,data scientist,microsoft,pune,Internship,12,5-10 years,2025-01-03,2025-01-18,Naukri.com,166,M.Tech,sql java react,Onsite,Medium (51-500),pune,5.0,10.0,7.5
+JOB159,business analyst,hcl,chennai,Internship,5,2-5 years,2024-12-29,2025-01-20,Naukri.com,218,MBA,machine learning sql digital marketing,Hybrid,Medium (51-500),chennai,2.0,5.0,3.5
+JOB161,software engineer,deloitte,delhi,Contract,5,2-5 years,2024-12-25,2025-01-19,Indeed,158,B.Tech,machine learning aws react,Remote,Large (500+),delhi,2.0,5.0,3.5
+JOB162,marketing executive,wipro,noida,Contract,8,10+ years,2024-12-30,2025-01-20,Indeed,62,B.Sc,uiux excel c++,Hybrid,Small (1-50),noida,10.0,10.0,10.0
+JOB164,hr manager,infosys,delhi,Internship,5,2-5 years,2025-01-16,2025-01-30,LinkedIn,205,M.Tech,digital marketing c++ python,Hybrid,Medium (51-500),delhi,2.0,5.0,3.5
+JOB167,graphic designer,google,ahmedabad,Part-time,3,0-2 years,2025-01-18,2025-02-06,Indeed,231,MBA,sql machine learning java,Onsite,Small (1-50),ahmedabad,0.0,2.0,1.0
+JOB168,hr manager,microsoft,kolkata,Contract,5,10+ years,2024-12-31,2025-01-20,LinkedIn,472,MBA,excel sql c++,Remote,Large (500+),kolkata,10.0,10.0,10.0
+JOB199,sales representative,google,hyderabad,Part-time,3,0-2 years,2025-01-15,2025-01-23,Indeed,462,B.Sc,machine learning excel java,Hybrid,Large (500+),hyderabad,0.0,2.0,1.0
+JOB209,sales representative,microsoft,mumbai,Full-time,5,10+ years,2025-01-15,2025-02-12,Naukri.com,389,MBA,java python digital marketing,Hybrid,Small (1-50),mumbai,10.0,10.0,10.0
+JOB212,sales representative,hcl,noida,Contract,20,10+ years,2024-12-23,2025-01-14,Naukri.com,255,MBA,aws excel java,Hybrid,Small (1-50),noida,10.0,10.0,10.0
+JOB246,marketing executive,microsoft,delhi,Internship,3,2-5 years,2024-12-29,2025-01-15,Indeed,481,M.Tech,sql aws uiux,Remote,Small (1-50),delhi,2.0,5.0,3.5
+JOB247,marketing executive,ibm,jaipur,Part-time,8,2-5 years,2024-12-26,2025-01-14,Naukri.com,451,M.Tech,c++ digital marketing react,Remote,Small (1-50),jaipur,2.0,5.0,3.5
+JOB250,financial analyst,ibm,bangalore,Full-time,8,2-5 years,2025-01-13,2025-02-11,LinkedIn,450,MBA,java digital marketing uiux,Onsite,Medium (51-500),bangalore,2.0,5.0,3.5
+JOB254,graphic designer,accenture,delhi,Part-time,12,5-10 years,2024-12-24,2025-01-05,Indeed,270,B.Tech,java c++ aws,Remote,Large (500+),delhi,5.0,10.0,7.5
+JOB257,software engineer,wipro,bangalore,Part-time,20,5-10 years,2025-01-12,2025-01-29,Indeed,64,M.Tech,excel python c++,Hybrid,Medium (51-500),bangalore,5.0,10.0,7.5
+JOB259,business analyst,microsoft,hyderabad,Contract,8,10+ years,2025-01-02,2025-01-30,Indeed,125,B.Sc,uiux digital marketing react,Remote,Medium (51-500),hyderabad,10.0,10.0,10.0
+JOB279,hr manager,google,hyderabad,Full-time,3,0-2 years,2025-01-14,2025-02-11,Naukri.com,139,PhD,machine learning excel python,Remote,Medium (51-500),hyderabad,0.0,2.0,1.0
+JOB289,graphic designer,microsoft,mumbai,Part-time,8,0-2 years,2025-01-15,2025-02-11,Indeed,108,B.Tech,python uiux digital marketing,Onsite,Medium (51-500),mumbai,0.0,2.0,1.0
+JOB486,financial analyst,accenture,hyderabad,Part-time,8,2-5 years,2025-01-15,2025-01-23,Naukri.com,419,M.Tech,sql machine learning aws,Remote,Small (1-50),hyderabad,2.0,5.0,3.5
+JOB509,business analyst,ibm,jaipur,Full-time,20,0-2 years,2025-01-12,2025-01-26,Indeed,14,B.Tech,uiux machine learning react,Hybrid,Medium (51-500),jaipur,0.0,2.0,1.0
+JOB536,hr manager,tcs,noida,Contract,5,0-2 years,2025-01-14,2025-02-02,Naukri.com,341,M.Tech,python digital marketing machine learning,Remote,Small (1-50),noida,0.0,2.0,1.0
