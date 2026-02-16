@@ -40,10 +40,8 @@ salary_exp_df = analyzer.get_salary_by_experience(df)
 # --------------------------
 # Show raw data
 # --------------------------
-
-st.subheader("Raw Job Data")
-
-st.dataframe(df)
+#st.subheader("Raw Job Data")
+#st.dataframe(df)
 
 st.sidebar.header("Filters")
 
@@ -162,6 +160,7 @@ st.markdown(
     LinkedIn: https://linkedin.com/in/jidnyasa-pawar-505639301
     """
 )
+
 
 
 
