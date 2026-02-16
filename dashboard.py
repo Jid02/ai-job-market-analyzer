@@ -16,7 +16,7 @@ st.set_page_config(
 
 st.title("AI Job Market Analyzer Dashboard")
 st.markdown(
-    "<p style='text-align: center; color: grey;'>Built by Jidnayasa Pawar | AI Job Market Analyzer 2026</p>",
+    "<p style='text-align: center; color: grey;'>Built by Jidnyasa Pawar | AI Job Market Analyzer 2026</p>",
     unsafe_allow_html=True
 )
 
@@ -100,4 +100,5 @@ st.dataframe(filtered_df)
 
 
 db.close()
+
 
