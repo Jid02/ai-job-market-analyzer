@@ -73,18 +73,13 @@ st.divider()
 
 st.subheader("Filter by Skill")
 
-selected_skill = st.selectbox(
-    "Select skill",
-    skills_df["skill"].tolist()
-)
-
 filtered_df = df[
     df["extracted_skills"].str.contains(selected_skill, na=False)
 ]
 
 st.dataframe(filtered_df)
 
-db.close()
+
 
 st.download_button(
     label="Download Data as CSV",
@@ -146,7 +141,7 @@ st.subheader("Salary vs Experience")
 st.line_chart(
     salary_exp_df.set_index("experience_years")["average_salary"]
 )
-
+db.close()
 
 
 
@@ -160,6 +155,7 @@ st.markdown(
     LinkedIn: https://linkedin.com/in/jidnyasa-pawar-505639301
     """
 )
+
 
 
 
