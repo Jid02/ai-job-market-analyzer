@@ -68,6 +68,33 @@ if "extracted_skills" in df.columns:
     if selected_skill != "All":
         df = df[df["extracted_skills"].str.contains(selected_skill, na=False)]
 
+# --------------------------
+# Skill filter
+# --------------------------
+st.divider()
+
+st.subheader("Filter by Skill")
+
+selected_skill = st.selectbox(
+    "Select skill",
+    skills_df["skill"].tolist()
+)
+
+filtered_df = df[
+    df["extracted_skills"].str.contains(selected_skill, na=False)
+]
+
+st.dataframe(filtered_df)
+
+db.close()
+
+st.download_button(
+    label="Download Data as CSV",
+    data=df.to_csv(index=False),
+    file_name="job_data.csv",
+    mime="text/csv"
+)
+
 
 # ===== KPI SECTION =====
 st.subheader("📊 Key Metrics")
@@ -123,33 +150,7 @@ st.line_chart(
 )
 
 
-# --------------------------
-# Skill filter
-# --------------------------
-st.divider()
 
-st.subheader("Filter by Skill")
-
-selected_skill = st.selectbox(
-    "Select skill",
-    skills_df["skill"].tolist()
-)
-
-filtered_df = df[
-    df["extracted_skills"].str.contains(selected_skill, na=False)
-]
-
-st.dataframe(filtered_df)
-
-
-db.close()
-
-st.download_button(
-    label="Download Data as CSV",
-    data=df.to_csv(index=False),
-    file_name="job_data.csv",
-    mime="text/csv"
-)
 
 st.markdown(
     """
@@ -161,6 +162,7 @@ st.markdown(
     LinkedIn: https://linkedin.com/in/jidnyasa-pawar-505639301
     """
 )
+
 
 
 
