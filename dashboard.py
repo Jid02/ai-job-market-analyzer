@@ -17,17 +17,6 @@ st.set_page_config(
 )
 
 st.title("AI Job Market Analyzer Dashboard")
-st.markdown(
-    "<p style='text-align: center; color: grey;'>Built by Jidnyasa Pawar | AI Job Market Analyzer 2026</p>",
-    unsafe_allow_html=True
-)
-st.markdown(
-    """
-    🔗 **Connect With Me:**  
-    [LinkedIn](https://linkedin.com/in/jidnyasa-pawar-505639301) | 
-    [GitHub](https://github.com/Jid02)
-    """
-)
 
 
 # --------------------------
@@ -55,6 +44,30 @@ salary_exp_df = analyzer.get_salary_by_experience(df)
 st.subheader("Raw Job Data")
 
 st.dataframe(df)
+
+st.sidebar.header("Filters")
+
+# City filter
+if "city" in df.columns:
+    selected_city = st.sidebar.selectbox(
+        "Select City",
+        ["All"] + sorted(df["city"].dropna().unique().tolist())
+    )
+
+    if selected_city != "All":
+        df = df[df["city"] == selected_city]
+
+
+# Skill filter
+if "extracted_skills" in df.columns:
+    selected_skill = st.sidebar.selectbox(
+        "Select Skill",
+        ["All"] + sorted(skills_df["skill"].unique().tolist())
+    )
+
+    if selected_skill != "All":
+        df = df[df["extracted_skills"].str.contains(selected_skill, na=False)]
+
 
 # ===== KPI SECTION =====
 st.subheader("📊 Key Metrics")
@@ -130,6 +143,26 @@ st.dataframe(filtered_df)
 
 
 db.close()
+
+st.download_button(
+    label="Download Data as CSV",
+    data=df.to_csv(index=False),
+    file_name="job_data.csv",
+    mime="text/csv"
+)
+
+st.markdown(
+    """
+    Built by Jidnyasa Pawar  
+    AI Engineer | Python | Machine Learning  
+
+    🔗 **Connect With Me:**  
+    GitHub: https://github.com/Jid02  
+    LinkedIn: https://linkedin.com/in/jidnyasa-pawar-505639301
+    """
+)
+
+
 
 
 
