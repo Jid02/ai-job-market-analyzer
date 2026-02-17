@@ -1,147 +1,197 @@
+# ============================================================
+# AI JOB MARKET ANALYZER - FAANG LEVEL DASHBOARD
+# Author: Jidnayasa Pawar
+# ============================================================
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import sqlite3
+from pathlib import Path
 
-# -----------------------------
+# ============================================================
 # PAGE CONFIG
-# -----------------------------
+# ============================================================
 
 st.set_page_config(
     page_title="AI Job Market Analyzer",
-    layout="wide"
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-# -----------------------------
-# DATABASE CONNECTION
-# -----------------------------
+# ============================================================
+# LOAD DATA (Production Safe)
+# ============================================================
+
+DATA_PATH = Path("data/jobs_cleaned.csv")
+
 
 @st.cache_data
 def load_data():
-    conn = sqlite3.connect("jobs.db")
-    df = pd.read_sql("SELECT * FROM jobs", conn)
-    conn.close()
-    return df
+
+    try:
+        df = pd.read_csv(DATA_PATH)
+
+        # Standardize column names
+        df.columns = df.columns.str.lower().str.strip()
+
+        return df
+
+    except Exception as e:
+
+        st.error("Dataset not found. Please upload jobs_cleaned.csv to data folder.")
+        return pd.DataFrame()
+
 
 df = load_data()
 
-# -----------------------------
-# BASIC DATA CLEANING
-# -----------------------------
+if df.empty:
+    st.stop()
 
-# Ensure extracted_skills exists
-if "extracted_skills" not in df.columns:
-    df["extracted_skills"] = ""
+# ============================================================
+# SAFE COLUMN HANDLING
+# ============================================================
 
-# Convert salary to numeric safely
-if "salary" in df.columns:
-    df["salary"] = pd.to_numeric(df["salary"], errors="coerce")
+def safe_column(df, col, default=""):
 
-if "experience" in df.columns:
-    df["experience"] = pd.to_numeric(df["experience"], errors="coerce")
+    if col not in df.columns:
+        df[col] = default
 
-# -----------------------------
-# TITLE
-# -----------------------------
+    return df
 
-st.title("AI Job Market Analyzer")
 
-st.caption(
-    "Built by Jidnayasa Pawar | Python • Data Analysis • Machine Learning"
+df = safe_column(df, "city")
+df = safe_column(df, "salary")
+df = safe_column(df, "experience")
+df = safe_column(df, "extracted_skills")
+
+# Convert numeric safely
+df["salary"] = pd.to_numeric(df["salary"], errors="coerce")
+df["experience"] = pd.to_numeric(df["experience"], errors="coerce")
+
+# ============================================================
+# HEADER
+# ============================================================
+
+st.title("AI Job Market Analyzer Dashboard")
+
+st.markdown(
+"""
+Interactive dashboard to analyze AI/ML job demand, skills, salary trends, and hiring locations.
+
+Built using:
+
+• Python  
+• Pandas  
+• Streamlit  
+• Data Analysis  
+• Data Visualization  
+"""
 )
 
 st.divider()
 
-# -----------------------------
+# ============================================================
 # SIDEBAR FILTERS
-# -----------------------------
+# ============================================================
 
-st.sidebar.title("Filters")
-
-# Location Filter
-if "city" in df.columns:
-    cities = df["city"].dropna().unique()
-    selected_city = st.sidebar.multiselect(
-        "Select Location",
-        cities,
-        default=cities
-    )
-else:
-    selected_city = []
-
-# Skills Filter
-skills_list = []
-
-for skills in df["extracted_skills"].dropna():
-    skills_list.extend(skills.split(","))
-
-skills_list = sorted(set(skills_list))
-
-selected_skills = st.sidebar.multiselect(
-    "Select Skills",
-    skills_list
-)
-
-# Salary Filter
-if "salary" in df.columns:
-    min_salary = int(df["salary"].min()) if df["salary"].notna().any() else 0
-    max_salary = int(df["salary"].max()) if df["salary"].notna().any() else 100000
-
-    salary_range = st.sidebar.slider(
-        "Salary Range",
-        min_salary,
-        max_salary,
-        (min_salary, max_salary)
-    )
-else:
-    salary_range = (0, 100000)
-
-# Experience Filter
-if "experience" in df.columns:
-    min_exp = int(df["experience"].min()) if df["experience"].notna().any() else 0
-    max_exp = int(df["experience"].max()) if df["experience"].notna().any() else 10
-
-    exp_range = st.sidebar.slider(
-        "Experience Range",
-        min_exp,
-        max_exp,
-        (min_exp, max_exp)
-    )
-else:
-    exp_range = (0, 10)
-
-# -----------------------------
-# APPLY FILTERS
-# -----------------------------
+st.sidebar.header("Filters")
 
 filtered_df = df.copy()
 
-if selected_city and "city" in filtered_df.columns:
-    filtered_df = filtered_df[filtered_df["city"].isin(selected_city)]
+# ---------------- CITY FILTER ----------------
+
+cities = sorted(filtered_df["city"].dropna().unique())
+
+selected_cities = st.sidebar.multiselect(
+    "Select Location",
+    cities,
+    default=cities
+)
+
+if selected_cities:
+
+    filtered_df = filtered_df[
+        filtered_df["city"].isin(selected_cities)
+    ]
+
+
+# ---------------- SKILL FILTER ----------------
+
+all_skills = []
+
+for skills in filtered_df["extracted_skills"].dropna():
+    all_skills.extend(str(skills).split(","))
+
+all_skills = sorted(set([s.strip() for s in all_skills if s]))
+
+selected_skills = st.sidebar.multiselect(
+    "Select Skills",
+    all_skills
+)
 
 if selected_skills:
+
     filtered_df = filtered_df[
         filtered_df["extracted_skills"].apply(
             lambda x: any(skill in str(x) for skill in selected_skills)
         )
     ]
 
-if "salary" in filtered_df.columns:
-    filtered_df = filtered_df[
-        (filtered_df["salary"] >= salary_range[0]) &
-        (filtered_df["salary"] <= salary_range[1])
-    ]
 
-if "experience" in filtered_df.columns:
-    filtered_df = filtered_df[
-        (filtered_df["experience"] >= exp_range[0]) &
-        (filtered_df["experience"] <= exp_range[1])
-    ]
+# ---------------- SALARY FILTER ----------------
 
-# -----------------------------
+if filtered_df["salary"].notna().any():
+
+    min_salary = int(filtered_df["salary"].min())
+    max_salary = int(filtered_df["salary"].max())
+
+else:
+
+    min_salary = 0
+    max_salary = 100000
+
+salary_range = st.sidebar.slider(
+    "Salary Range",
+    min_salary,
+    max_salary,
+    (min_salary, max_salary)
+)
+
+filtered_df = filtered_df[
+    (filtered_df["salary"] >= salary_range[0]) &
+    (filtered_df["salary"] <= salary_range[1])
+]
+
+
+# ---------------- EXPERIENCE FILTER ----------------
+
+if filtered_df["experience"].notna().any():
+
+    min_exp = int(filtered_df["experience"].min())
+    max_exp = int(filtered_df["experience"].max())
+
+else:
+
+    min_exp = 0
+    max_exp = 10
+
+exp_range = st.sidebar.slider(
+    "Experience Range",
+    min_exp,
+    max_exp,
+    (min_exp, max_exp)
+)
+
+filtered_df = filtered_df[
+    (filtered_df["experience"] >= exp_range[0]) &
+    (filtered_df["experience"] <= exp_range[1])
+]
+
+# ============================================================
 # KPI METRICS
-# -----------------------------
+# ============================================================
 
 st.subheader("Key Metrics")
 
@@ -149,44 +199,43 @@ col1, col2, col3, col4 = st.columns(4)
 
 total_jobs = len(filtered_df)
 
-# Top Skill
-all_skills = []
+# Top skill
+skills_flat = []
 
 for skills in filtered_df["extracted_skills"].dropna():
-    all_skills.extend(skills.split(","))
+    skills_flat.extend(str(skills).split(","))
 
-top_skill = max(set(all_skills), key=all_skills.count) if all_skills else "N/A"
+top_skill = max(set(skills_flat), key=skills_flat.count) if skills_flat else "N/A"
 
-# Top City
-if "city" in filtered_df.columns and not filtered_df.empty:
-    top_city = filtered_df["city"].value_counts().idxmax()
-else:
-    top_city = "N/A"
+# Top city
+top_city = (
+    filtered_df["city"].value_counts().idxmax()
+    if not filtered_df["city"].empty else "N/A"
+)
 
-# Avg Salary
-if "salary" in filtered_df.columns:
-    avg_salary = int(filtered_df["salary"].mean()) if filtered_df["salary"].notna().any() else 0
-else:
-    avg_salary = 0
+# Avg salary
+avg_salary = int(filtered_df["salary"].mean()) if filtered_df["salary"].notna().any() else 0
 
 col1.metric("Total Jobs", total_jobs)
 col2.metric("Top Skill", top_skill)
 col3.metric("Top City", top_city)
-col4.metric("Avg Salary", avg_salary)
+col4.metric("Average Salary", avg_salary)
 
 st.divider()
 
-# -----------------------------
-# TOP SKILLS CHART
-# -----------------------------
+# ============================================================
+# CHARTS ROW 1
+# ============================================================
 
 col1, col2 = st.columns(2)
+
+# -------- TOP SKILLS --------
 
 with col1:
 
     st.subheader("Top Skills Demand")
 
-    skill_counts = pd.Series(all_skills).value_counts().head(10)
+    skill_counts = pd.Series(skills_flat).value_counts().head(10)
 
     fig, ax = plt.subplots()
 
@@ -201,95 +250,95 @@ with col1:
 
     st.pyplot(fig)
 
-# -----------------------------
-# TOP CITIES CHART
-# -----------------------------
+
+# -------- CITY DEMAND --------
 
 with col2:
 
-    if "city" in filtered_df.columns:
+    st.subheader("Top Hiring Cities")
 
-        st.subheader("Top Hiring Cities")
-
-        city_counts = filtered_df["city"].value_counts().head(10)
-
-        fig, ax = plt.subplots()
-
-        sns.barplot(
-            x=city_counts.values,
-            y=city_counts.index,
-            ax=ax
-        )
-
-        ax.set_xlabel("Job Count")
-        ax.set_ylabel("City")
-
-        st.pyplot(fig)
-
-st.divider()
-
-# -----------------------------
-# SALARY VS EXPERIENCE
-# -----------------------------
-
-if "salary" in filtered_df.columns and "experience" in filtered_df.columns:
-
-    st.subheader("Salary vs Experience")
+    city_counts = filtered_df["city"].value_counts().head(10)
 
     fig, ax = plt.subplots()
 
-    sns.scatterplot(
-        data=filtered_df,
-        x="experience",
-        y="salary",
+    sns.barplot(
+        x=city_counts.values,
+        y=city_counts.index,
         ax=ax
     )
 
-    ax.set_xlabel("Experience (Years)")
-    ax.set_ylabel("Salary")
+    ax.set_xlabel("Job Count")
+    ax.set_ylabel("City")
 
     st.pyplot(fig)
 
+
 st.divider()
 
-# -----------------------------
+# ============================================================
+# SALARY VS EXPERIENCE
+# ============================================================
+
+st.subheader("Salary vs Experience")
+
+fig, ax = plt.subplots()
+
+sns.scatterplot(
+    data=filtered_df,
+    x="experience",
+    y="salary",
+    ax=ax
+)
+
+ax.set_xlabel("Experience")
+ax.set_ylabel("Salary")
+
+st.pyplot(fig)
+
+st.divider()
+
+# ============================================================
 # SKILL FREQUENCY TABLE
-# -----------------------------
+# ============================================================
 
 st.subheader("Skill Demand Frequency")
 
-skill_freq = pd.Series(all_skills).value_counts()
+skill_freq = pd.Series(skills_flat).value_counts()
 
 st.dataframe(skill_freq)
 
-st.divider()
+# ============================================================
+# RAW DATA VIEW
+# ============================================================
 
-# -----------------------------
+st.subheader("Filtered Job Listings")
+
+st.dataframe(filtered_df)
+
+# ============================================================
 # DOWNLOAD BUTTON
-# -----------------------------
-
-st.subheader("Download Filtered Data")
+# ============================================================
 
 csv = filtered_df.to_csv(index=False)
 
 st.download_button(
-    label="Download CSV",
-    data=csv,
-    file_name="filtered_jobs.csv",
-    mime="text/csv"
+    "Download Filtered Data",
+    csv,
+    "filtered_jobs.csv",
+    "text/csv"
 )
+
+# ============================================================
+# FOOTER
+# ============================================================
 
 st.divider()
 
-# -----------------------------
-# FOOTER
-# -----------------------------
-
 st.markdown(
-    """Built by Jidnayasa Pawar  
-    AI Job Market Analyzer | Streamlit | Python | SQLite
-    """
+"""
+Built by **Jidnayasa Pawar**
+
+Tech Stack:
+Python • Pandas • Streamlit • Data Analysis • Visualization
+"""
 )
-
-
-
