@@ -286,8 +286,7 @@ st.divider()
 # -----------------------------
 
 st.markdown(
-    """
-    Built by Jidnayasa Pawar  
+    """Built by Jidnayasa Pawar  
     AI Job Market Analyzer | Streamlit | Python | SQLite
     """
 )
@@ -453,6 +452,7 @@ st.markdown(
     """
 )
 """
+
 
 
 
